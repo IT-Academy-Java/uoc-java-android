@@ -7,6 +7,9 @@ import java.util.Scanner;
  * 2 números y
  * uno de los siguientes valores “+”, “-”, “*”, “/”, “%”, “pot”
  * y devuelva el resultado de la operación realizada.
+ *
+ * @author epiaggio
+ *
  */
 public class Ex3 {
 
