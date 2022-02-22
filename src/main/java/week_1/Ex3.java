@@ -11,21 +11,22 @@ import java.util.Scanner;
 public class Ex3 {
 
   public static void main(String[] args) {
+    getFromScanner();
+  }
 
+  private static void getFromScanner(){
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("Number 1: \n");
+    System.out.print("Number 1: \t");
     int num1 = sc.nextInt();
 
-    System.out.println("Number 2: \b");
+    System.out.print("Number 2: \t");
     int num2 = sc.nextInt();
 
-    System.out.println("Operator: \b");
+    System.out.print("Operator: \t");
     String operator = sc.next();
 
-    System.out.println("Result: " + operationResult(num1,num2,operator));
-    System.out.println("Chau");
-
+    System.out.println("\n********************* Result: " + operationResult(num1,num2,operator) + " *********************");
   }
 
   private static float operationResult(float num1, float num2, String operator){
@@ -55,5 +56,4 @@ public class Ex3 {
 
     return result;
   }
-
 }
