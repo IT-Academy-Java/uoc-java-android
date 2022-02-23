@@ -1,5 +1,9 @@
 package week_1;
 
+/**
+ * Crea una función que devuelve un número entero aleatorio entre 1 y 10.
+ * @author epiaggio
+ */
 public class Ex9 {
 
   public static void main(String[] args) {
