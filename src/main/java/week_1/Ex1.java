@@ -6,7 +6,6 @@ import java.util.Scanner;
  * Escribe una función que dado un valor entero de entrada, retorna true si este valor es un número par
  * 
  * @author epiaggio
- *
  */
 
 public class Ex1 {
@@ -15,7 +14,7 @@ public class Ex1 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.print("Escribe un número entero: \b");
+		System.out.print("Escribe un número entero: \t");
 		int numero = scanner.nextInt();
 		
 		if(esPar(numero)) {
