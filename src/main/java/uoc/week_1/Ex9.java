@@ -1,4 +1,4 @@
-package week_1;
+package uoc.week_1;
 
 /**
  * Crea una función que devuelve un número entero aleatorio entre 1 y 10.

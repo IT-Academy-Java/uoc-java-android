@@ -1,3 +1,5 @@
+package uoc.week_1;
+
 /**
  * 
  *  Escribir una función para invertir manualmente un array pasado por parámetro.

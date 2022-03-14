@@ -1,4 +1,4 @@
-package balmes.persistencia;
+package uoc.persistencia;
 
 import java.io.IOException;
 
