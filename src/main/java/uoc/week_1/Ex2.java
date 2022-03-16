@@ -2,8 +2,8 @@ package uoc.week_1;
 
 /**
  * Crea una función que recibe una cadena de texto y devuelve el número de vocales.
- * @author epiaggio
  *
+ * @author epiaggio
  */
 public class Ex2 {
 	
