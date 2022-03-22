@@ -1,5 +1,7 @@
-package invoice;
+package uoc.invoice;
+
 import java.io.*;
+import java.util.Date;
 
 public class FileManager {
 
@@ -21,16 +23,25 @@ public class FileManager {
             br = new BufferedReader(fr);
 
             // Lectura del fitxer
-            String linea;
             String date = "";
-            String monto = "";
-            String description = "";
 
+            while ((date = br.readLine()) != null){
+                try {
+                    invoice.setAmount(Integer.parseInt(br.readLine()));
+                    invoice.setDescription(br.readLine());
+                    String[] convertDate = date.split("/");
 
-            while ((date = br.readLine()) != null)
-                invoice.setAmount(Integer.parseInt(br.readLine()));
-                invoice.setDescription(br.readLine());
+                    int year = Integer.parseInt(convertDate[0]) - 1900;
+                    int month = Integer.parseInt(convertDate[1]) - 1;
+                    int day = Integer.parseInt(convertDate[2]);
 
+                    Date myDate = new Date(year, month, day);
+                    invoice.setDate(myDate);
+                }catch (Exception e){
+                    System.out.println("Error -> " + e.getMessage());
+                    e.printStackTrace();
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("\n" + e.getMessage());
@@ -44,6 +55,7 @@ public class FileManager {
                 System.out.println("\n" + e2.toString());
             }
         }
+        invoice.toString();
         return invoice;
     }
 

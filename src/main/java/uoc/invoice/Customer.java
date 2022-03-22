@@ -1,4 +1,4 @@
-package invoice;
+package uoc.invoice;
 
 import java.util.ArrayList;
 import java.util.List;

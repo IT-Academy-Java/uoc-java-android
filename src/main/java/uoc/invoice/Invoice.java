@@ -1,32 +1,96 @@
-package invoice;
+package uoc.invoice;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Customer {
+public class Invoice {
 
-    private String name;
-    private List<Invoice> invoiceList = new ArrayList<>();
+    private Date date;
+    private String description;
+    private int amount;
+    private static int id = 0;
+    private int invoiceID;
 
-    public Customer(String name) {
-        this.name = name;
+    public Invoice() {
     }
 
-    public Customer(String name, List<Invoice> invoiceList) {
-        this.name = name;
-        this.invoiceList = invoiceList;
+    public Invoice(Date date, String description, int amount){
+        this.date = date;
+        this.description = description;
+        this.invoiceID = id;
+        this.amount = amount;
+        id++;
     }
 
-    public void addInvoice(Invoice invoice){
-        this.invoiceList.add(invoice);
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public int getTotalAmount(){
-        int totalAmount = 0;
-        for (Invoice invoice : invoiceList) {
-            totalAmount+=invoice.getAmount();
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public static int getId() {
+        return id;
+    }
+
+    public static void setId(int id) {
+        Invoice.id = id;
+    }
+
+    public int getInvoiceID() {
+        return invoiceID;
+    }
+
+    public void setInvoiceID(int invoiceID) {
+        this.invoiceID = invoiceID;
+    }
+
+    public int isLessThan(Invoice i) {
+        int isLess = 0;
+        if (this.date.before(i.date)) {
+            isLess = -1;
+        }else if (i.date.before(this.date)) {
+            isLess = 1;
+        }else {
+            if (this.amount < i.amount) {
+                isLess = -1;
+            }else if (this.amount > i.amount) {
+                isLess = 1;
+            }else {
+                isLess = 0;
+            }
         }
+        return isLess;
+    }
 
-        return totalAmount;
+    public String getDate () {
+        String date = "";
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        date = formatter.format(this.date);
+
+        return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+          "date=" + date +
+          "\n description='" + description + '\'' +
+          "\n amount=" + amount +
+          "\n invoiceID=" + invoiceID +
+          '}';
     }
 }
