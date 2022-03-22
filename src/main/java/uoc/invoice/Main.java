@@ -1,4 +1,4 @@
-package invoice;
+package uoc.invoice;
 
 import java.util.Date;
 
@@ -12,22 +12,19 @@ public class Main {
         Invoice laDolorosa2 = new Invoice(date,"la dolorosa2", 800);
         Invoice laDolorosa3 = new Invoice(date,"la dolorosa3", 40);
 
-        System.out.println("Invoice la dolorosa => " + laDolorosa.getDate());
-
         Customer customerThomas = new Customer("Thomas");
         customerThomas.addInvoice(laDolorosa);
         customerThomas.addInvoice(laDolorosa1);
         customerThomas.addInvoice(laDolorosa2);
         customerThomas.addInvoice(laDolorosa3);
 
-        System.out.println("Total amount => " + customerThomas.getTotalAmount());
 
         FileManager fileManager = new FileManager();
+        String localUrl = "C:\\Users\\epiaggio\\Documents\\code\\fitxers\\invoice.txt";
 
-        String fitxer = "C:\\Users\\UOC\\Documents\\fitxers\\invoice.txt";
         System.out.println("******************* LEYENDO *********************");
-        Invoice invoice = fileManager.readFile(fitxer);
-        invoice.toString();
+        Invoice invoice = fileManager.readFile(localUrl);
+        System.out.println(invoice.toString());
 
         System.out.println("******************* FIN LECTURA ******************");
 
