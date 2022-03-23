@@ -18,15 +18,11 @@ public class Main {
         customerThomas.addInvoice(laDolorosa2);
         customerThomas.addInvoice(laDolorosa3);
 
-
         FileManager fileManager = new FileManager();
-        String localUrl = "C:\\Users\\epiaggio\\Documents\\code\\fitxers\\invoice.txt";
 
-        System.out.println("******************* LEYENDO *********************");
-        Invoice invoice = fileManager.readFile(localUrl);
+        String projectUrl = "src\\main\\resources\\invoice.txt";
+        Invoice invoice = fileManager.readFile(projectUrl);
         System.out.println(invoice.toString());
-
-        System.out.println("******************* FIN LECTURA ******************");
 
     }
 }
